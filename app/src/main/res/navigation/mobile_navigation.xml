@@ -46,4 +46,24 @@
         android:name="com.example.ask.ui.fragment.FragmentInjection"
         android:label="@string/menu_fragment_injection" />
 
+    <fragment
+        android:id="@+id/nav_exposed_component"
+        android:name="com.example.ask.ui.exposedComponents.ExposedComponents"
+        android:label="@string/exposed_components"/>
+
+    <fragment
+        android:id="@+id/nav_implicit_intent_hijacking"
+        android:name="com.example.ask.ui.implicitIntent.ImplicitIntent"
+        android:label="@string/implicit_intent_hijacking"/>
+
+    <fragment
+        android:id="@+id/nav_webview"
+        android:name="com.example.ask.ui.webview.WebView"
+        android:label="@string/webview"/>
+    <fragment
+        android:id="@+id/nav_intent_scheme_url"
+        android:name="com.example.ask.ui.intentSchemeUrl.intentSchemeUrl"
+        android:label="@string/intent_scheme_url"/>
+
+
 </navigation>

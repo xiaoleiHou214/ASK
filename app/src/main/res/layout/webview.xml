@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="步骤1：安装webview.apk" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="步骤2：启动webview.apk" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="步骤3：分别点击JAVASCRIPT EXECUTION, ALLOW CONTENT ACCESS, ALLOW FILE ACCESS, 以及LOAD DATA WITH URL按钮，可演示该项若配置下的安全风险" />
+
+
+</LinearLayout>

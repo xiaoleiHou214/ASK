@@ -24,6 +24,22 @@
             android:id="@+id/nav_fragment_injection"
             android:icon="@drawable/ic_menu_send"
             android:title="@string/menu_fragment_injection"/>
+        <item
+            android:id="@+id/nav_exposed_component"
+            android:icon="@drawable/abc_vector_test"
+            android:title="@string/exposed_components"/>
+        <item
+            android:id="@+id/nav_implicit_intent_hijacking"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/implicit_intent_hijacking"/>
+        <item
+            android:id="@+id/nav_webview"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/webview"/>
+        <item
+            android:id="@+id/nav_intent_scheme_url"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/intent_scheme_url"/>
     </group>
 
     <item android:title="Communicate">

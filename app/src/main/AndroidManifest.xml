@@ -28,6 +28,14 @@
         <activity android:name=".ui.storage.InformationLeak"/>
         <activity android:name=".ui.worldFile.ReadDetail"/>
         <activity android:name=".ui.worldFile.WriteDetail"/>
+        <activity android:name=".ui.exposedComponents.ExploitProviderActivity"/>
+        <activity android:name=".ui.implicitIntent.HijackIntent">
+            <intent-filter>
+                <action android:name="com.example.showlocation"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

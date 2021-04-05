@@ -21,4 +21,8 @@
     <string name="packageName">com.example.xiao.fileread</string>
 
     <string name="home_second">Home Second</string>
+    <string name="exposed_components">组件暴露</string>
+    <string name="implicit_intent_hijacking">隐式intent劫持</string>
+    <string name="webview">WebView弱配置</string>
+    <string name="intent_scheme_url">Intent Scheme Url利用</string>
 </resources>

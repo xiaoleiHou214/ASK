@@ -15,6 +15,8 @@ public class MsgUtil {
                 return returnWorldFile();
             case "Storage":
                 return returnStorage();
+            case "ExposedComponents":
+                return returnExposedComponents();
         }
         return null;
     }
@@ -25,6 +27,19 @@ public class MsgUtil {
         Message msg2 = new Message("全局文件可写");
         messages.add(msg1);
         messages.add(msg2);
+        return messages;
+    }
+
+    private static List<Message> returnExposedComponents(){
+        List<Message> messages = new ArrayList<>();
+        Message msg1 = new Message("Activity暴露");
+        Message msg2 = new Message("Service暴露");
+        Message msg3 = new Message("BroadcastReceiver暴露");
+        Message msg4 = new Message("ContentProvider暴露");
+        messages.add(msg1);
+        messages.add(msg2);
+        messages.add(msg3);
+        messages.add(msg4);
         return messages;
     }
 

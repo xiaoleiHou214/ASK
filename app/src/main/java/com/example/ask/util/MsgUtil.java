@@ -9,8 +9,8 @@ public class MsgUtil {
     private List<Message> messageList;
     public static String worldFile = "WorldFile";
 
-    public static List<Message> getList(String fragmentName){
-        switch (fragmentName){
+    public static List<Message> getList(String fragmentName) {
+        switch (fragmentName) {
             case "WorldFile":
                 return returnWorldFile();
             case "Storage":
@@ -19,11 +19,13 @@ public class MsgUtil {
                 return returnExposedComponents();
             case "SharedPreference":
                 return returnSP();
+            case "DynamicRegBroadcast":
+                return returnDynamicBroadcast();
         }
         return null;
     }
 
-    private static List<Message> returnWorldFile(){
+    private static List<Message> returnWorldFile() {
         List<Message> messages = new ArrayList<>();
         Message msg1 = new Message("全局文件可读");
         Message msg2 = new Message("全局文件可写");
@@ -32,7 +34,7 @@ public class MsgUtil {
         return messages;
     }
 
-    private static List<Message> returnExposedComponents(){
+    private static List<Message> returnExposedComponents() {
         List<Message> messages = new ArrayList<>();
         Message msg1 = new Message("Activity暴露");
         Message msg2 = new Message("Service暴露");
@@ -45,7 +47,7 @@ public class MsgUtil {
         return messages;
     }
 
-    private static List<Message> returnStorage(){
+    private static List<Message> returnStorage() {
         List<Message> messages = new ArrayList<>();
         Message msg1 = new Message("数据注入");
         Message msg2 = new Message("信息泄露");
@@ -54,13 +56,21 @@ public class MsgUtil {
         return messages;
     }
 
-    private static List<Message> returnSP(){
-        List<Message> messages=new ArrayList<>();
+    private static List<Message> returnSP() {
+        List<Message> messages = new ArrayList<>();
         Message msg1 = new Message("配置文件可读");
         Message msg2 = new Message("配置文件可写");
         messages.add(msg1);
         messages.add(msg2);
         return messages;
     }
+
+    private static List<Message> returnDynamicBroadcast() {
+        List<Message> messages = new ArrayList<>();
+        Message msg1 = new Message("发送广播");
+        messages.add(msg1);
+        return messages;
+    }
+
 
 }

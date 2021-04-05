@@ -26,6 +26,8 @@
         <activity android:name=".ui.worldFile.FileWrite"/>
         <activity android:name=".ui.storage.DataInjection"/>
         <activity android:name=".ui.storage.InformationLeak"/>
+        <activity android:name=".ui.worldFile.ReadDetail"/>
+        <activity android:name=".ui.worldFile.WriteDetail"/>
     </application>
 
 </manifest>

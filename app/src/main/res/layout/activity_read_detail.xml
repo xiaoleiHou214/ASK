@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.worldFile.ReadDetail"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="300dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="读取File内容："
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/file_read"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:minLines="5"
+            android:gravity="top"
+            android:padding="5dp"
+            android:background="@drawable/order_edt_note_bg" />
+
+        <Button
+            android:id="@+id/btn_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="读取文件"
+            android:layout_gravity="right"/>
+    </LinearLayout>
+
+
+</LinearLayout>

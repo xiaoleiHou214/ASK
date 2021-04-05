@@ -19,6 +19,7 @@
     <string name="menu_shared_preferences">配置文件读写</string>
     <string name="menu_dynamic_reg_broadcast">动态注册Broadcast</string>
     <string name="menu_allow_backup">数据任意备份</string>
+    <string name="menu_debuggable">程序任意调试</string>
 
     <string name="packageName">com.example.xiao.fileread</string>
 

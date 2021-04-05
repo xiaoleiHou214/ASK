@@ -41,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_storage, R.id.nav_world_file,
                 R.id.nav_shared_preferences, R.id.nav_fragment_injection,
-                R.id.nav_exposed_component, R.id.nav_implicit_intent_hijacking, R.id.nav_webview, R.id.nav_intent_scheme_url,
-                R.id.nav_dynamic_Broadcast, R.id.nav_allow_backup, R.id.nav_share, R.id.nav_send)
+                R.id.nav_exposed_component, R.id.nav_implicit_intent_hijacking,
+                R.id.nav_webview, R.id.nav_intent_scheme_url,
+                R.id.nav_dynamic_Broadcast, R.id.nav_allow_backup,
+                R.id.nav_debuggable, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

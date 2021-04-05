@@ -74,6 +74,11 @@
     <fragment
         android:id="@+id/nav_allow_backup"
         android:name="com.example.ask.ui.allowBackup.AllowBackup"
-        android:label="@string/menu_allow_backup"/>
+        android:label="@string/menu_allow_backup" />
+
+    <fragment
+        android:id="@+id/nav_debuggable"
+        android:name="com.example.ask.ui.debuggable.Debuggable"
+        android:label="@string/menu_debuggable" />
 
 </navigation>

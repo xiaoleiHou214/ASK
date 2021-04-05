@@ -48,6 +48,10 @@
             android:id="@+id/nav_allow_backup"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_allow_backup"/>
+        <item
+            android:id="@+id/nav_debuggable"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_debuggable"/>
     </group>
 
     <item android:title="Communicate">

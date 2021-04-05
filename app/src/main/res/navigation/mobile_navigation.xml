@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.ask.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_storage"
+        android:name="com.example.ask.ui.storage.ExternalStorageFragment"
+        android:label="@string/menu_storage"
+        tools:layout="@layout/fragment_storage" />
+
+    <fragment
+        android:id="@+id/nav_world_file"
+        android:name="com.example.ask.ui.worldFile.WorldFile"
+        android:label="@string/menu_world_file"
+        tools:layout="@layout/fragment_world_file" />
+
+    <fragment
+        android:id="@+id/nav_shared_preferences"
+        android:name="com.example.ask.ui.preference.SharedPreference"
+        android:label="@string/menu_shared_preferences"
+        tools:layout="@layout/fragment_shared_preference" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.ask.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.example.ask.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+
+    <fragment
+        android:id="@+id/nav_fragment_injection"
+        android:name="com.example.ask.ui.fragment.FragmentInjection"
+        android:label="@string/menu_fragment_injection" />
+
+</navigation>

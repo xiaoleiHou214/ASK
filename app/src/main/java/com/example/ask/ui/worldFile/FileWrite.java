@@ -38,7 +38,7 @@ public class FileWrite extends Activity {
                 switch (meg){
                     case "写入文件内容":
                         Intent intent = new Intent(FileWrite.this,WriteDetail.class);
-                        String path = "/data/data/com.example.xiao.fileread/files/FileRead.txt";
+                        String path = "/data/data/com.example.xiao.filewrite/files/FileRead.txt";
                         intent.putExtra("path",path);
                         startActivity(intent);
                         break;

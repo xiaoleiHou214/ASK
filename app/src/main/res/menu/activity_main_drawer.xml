@@ -40,6 +40,10 @@
             android:id="@+id/nav_intent_scheme_url"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/intent_scheme_url"/>
+        <item
+            android:id="@+id/nav_dynamic_Broadcast"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_dynamic_reg_broadcast"/>
     </group>
 
     <item android:title="Communicate">

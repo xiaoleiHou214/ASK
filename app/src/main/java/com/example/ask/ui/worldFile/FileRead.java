@@ -52,6 +52,8 @@ public class FileRead extends Activity {
                 switch (meg){
                     case "读取文件内容":
                         Intent intent = new Intent(FileRead.this,ReadDetail.class);
+                        String path = "/data/data/com.example.xiao.fileread/files/FileRead.txt";
+                        intent.putExtra("path",path);
                         startActivity(intent);
                         break;
                 }

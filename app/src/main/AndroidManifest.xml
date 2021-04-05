@@ -28,6 +28,9 @@
         <activity android:name=".ui.storage.InformationLeak"/>
         <activity android:name=".ui.worldFile.ReadDetail"/>
         <activity android:name=".ui.worldFile.WriteDetail"/>
+        <activity android:name=".ui.preference.PreferenceRead"/>
+        <activity android:name=".ui.preference.PreferenceWrite"/>
+
         <activity android:name=".ui.exposedComponents.ExploitProviderActivity"/>
         <activity android:name=".ui.implicitIntent.HijackIntent">
             <intent-filter>

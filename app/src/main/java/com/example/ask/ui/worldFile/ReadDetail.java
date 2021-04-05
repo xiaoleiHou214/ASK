@@ -19,6 +19,7 @@ import java.io.InputStreamReader;
 public class ReadDetail extends Activity {
     private TextView readText;
     private Button readBtn;
+    private String filePath;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class ReadDetail extends Activity {
 
         readText = findViewById(R.id.file_read);
         readBtn = findViewById(R.id.btn_read);
+        filePath = getIntent().getStringExtra("path");
 
         readBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,9 +39,15 @@ public class ReadDetail extends Activity {
 
     public void Read(){
         try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                new FileInputStream("/data/data/com.example.xiao.fileread/files/FileRead.txt")));) {
-            String line = br.readLine();
-            readText.setText(line);
+                new FileInputStream(filePath)));) {
+            StringBuilder all = new StringBuilder();
+            String line = null;
+            while ((line=br.readLine())!=null){
+                all.append(line);
+                all.append("\n");
+            }
+            readText.setText(all.toString());
+
         } catch (IOException e) {
             Toast.makeText(this, "读取失败", Toast.LENGTH_SHORT).show();
             e.printStackTrace();

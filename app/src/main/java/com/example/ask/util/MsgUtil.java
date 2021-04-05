@@ -17,6 +17,8 @@ public class MsgUtil {
                 return returnStorage();
             case "ExposedComponents":
                 return returnExposedComponents();
+            case "SharedPreference":
+                return returnSP();
         }
         return null;
     }
@@ -47,6 +49,15 @@ public class MsgUtil {
         List<Message> messages = new ArrayList<>();
         Message msg1 = new Message("数据注入");
         Message msg2 = new Message("信息泄露");
+        messages.add(msg1);
+        messages.add(msg2);
+        return messages;
+    }
+
+    private static List<Message> returnSP(){
+        List<Message> messages=new ArrayList<>();
+        Message msg1 = new Message("配置文件可读");
+        Message msg2 = new Message("配置文件可写");
         messages.add(msg1);
         messages.add(msg2);
         return messages;

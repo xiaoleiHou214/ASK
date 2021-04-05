@@ -60,11 +60,11 @@
         android:id="@+id/nav_webview"
         android:name="com.example.ask.ui.webview.WebView"
         android:label="@string/webview" />
+
     <fragment
         android:id="@+id/nav_intent_scheme_url"
         android:name="com.example.ask.ui.intentSchemeUrl.intentSchemeUrl"
         android:label="@string/intent_scheme_url" />
-
 
     <fragment
         android:id="@+id/nav_dynamic_Broadcast"

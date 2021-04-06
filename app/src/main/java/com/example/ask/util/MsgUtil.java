@@ -21,6 +21,8 @@ public class MsgUtil {
                 return returnSP();
             case "DynamicRegBroadcast":
                 return returnDynamicBroadcast();
+            case "FragmentInjection":
+                return returnFragmentInjection();
         }
         return null;
     }
@@ -71,6 +73,14 @@ public class MsgUtil {
         messages.add(msg1);
         return messages;
     }
+
+    private static List<Message> returnFragmentInjection(){
+        List<Message> messages = new ArrayList<>();
+        Message msg1 = new Message("Fragment注入");
+        messages.add(msg1);
+        return messages;
+    }
+
 
 
 }

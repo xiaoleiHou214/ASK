@@ -18,7 +18,7 @@ public class DynamicRegBroadcastActivity extends Activity {
         setContentView(R.layout.activity_dynamic_reg_broadcast);
 
         Intent intent = new Intent("com.example.action.EMAIL");
-        intent.putExtra("email", "rookie@malicious.com");
+        intent.putExtra("email", "rookie@test.com");
         intent.putExtra("text", "I can send email without any permissions");
         sendBroadcast(intent);
     }

@@ -17,9 +17,14 @@ public class DynamicRegBroadcastActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dynamic_reg_broadcast);
 
-        Intent intent = new Intent("com.example.action.EMAIL");
-        intent.putExtra("email", "rookie@test.com");
-        intent.putExtra("text", "I can send email without any permissions");
+//        Intent intent = new Intent("com.example.action.EMAIL");
+//        intent.putExtra("email", "rookie@test.com");
+//        intent.putExtra("text", "I can send email without any permissions");
+        Intent intent = new Intent("loginReplyMessage");
+        intent.putExtra("status","1");
+        intent.putExtra("nickName","入侵者");
+//        Intent intent = new Intent("registReplyMessage");
+//        intent.putExtra("status",1);
         sendBroadcast(intent);
     }
 }

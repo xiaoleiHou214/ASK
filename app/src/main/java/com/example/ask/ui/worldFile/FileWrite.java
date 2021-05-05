@@ -26,7 +26,7 @@ public class FileWrite extends Activity {
         setContentView(R.layout.activity_file_list);
 
         listView = findViewById(R.id.list_item);
-        path = "/data/data/"+ "com.example.xiao.fileread"+"/files";
+        path = "/data/data/"+ "com.example.avjindersinghsekhon.minimaltodo"+"/files";
         messageList = getFileList();
         msgAdapter = new MsgAdapter(this,messageList);
         listView.setAdapter(msgAdapter);
@@ -38,7 +38,7 @@ public class FileWrite extends Activity {
                 switch (meg){
                     case "写入文件内容":
                         Intent intent = new Intent(FileWrite.this,WriteDetail.class);
-                        String path = "/data/data/com.example.xiao.filewrite/files/FileRead.txt";
+                        String path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/todoitems.json";
                         intent.putExtra("path",path);
                         startActivity(intent);
                         break;

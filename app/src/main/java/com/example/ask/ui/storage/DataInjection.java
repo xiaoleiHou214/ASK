@@ -39,9 +39,9 @@ public class DataInjection extends Activity {
 
     private void writeToFile() {
         TextView res = (TextView) findViewById(R.id.result);
-        File file = new File(getExternalFilesDir(null), "bible.txt");
+        File file = new File(getExternalFilesDir(null), "AnotherMonitor/AnotherMonitorRecord-2021-04-16-15-14-48.csv");
         String absPath = file.getAbsolutePath();
-        String myPath = absPath.replace("com.example.ask", "com.example.externalstorage");
+        String myPath = absPath.replace("com.example.ask", "org.anothermonitor");
         Log.d("ExternalStorageBenign", "Benign = " + file.getAbsolutePath());
         Log.d("ExternalStorageBenign", "Mal = " + myPath);
         try (InputStream is = getResources().openRawResource(R.raw.bible);
@@ -50,6 +50,7 @@ public class DataInjection extends Activity {
             is.read(data);
             os.write(data);
             Log.d("ExternalStorageBenign", myPath + " written successfully");
+            res.setText("written successfully");
         } catch (IOException e) {
             e.printStackTrace();
             res.setText("Unable to write into file");

@@ -43,7 +43,7 @@ public class PreferenceRead extends Activity {
                 switch (meg){
                     case "读取配置文件内容":
                         Intent intent = new Intent(PreferenceRead.this, ReadDetail.class);
-                        String path = "/data/data/com.example.xiao.preferencesread/shared_prefs/SharedPreferencesRead.xml";
+                        String path = "/data/data/org.horaapps.leafpic.debug/shared_prefs/org.horaapps.leafpic.debug_preferences.xml";
                         intent.putExtra("path",path);
                         startActivity(intent);
                         break;

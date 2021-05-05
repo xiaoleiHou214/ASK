@@ -39,7 +39,7 @@ public class PreferenceWrite extends Activity {
                 switch (meg){
                     case "写入配置文件内容":
                         Intent intent = new Intent(PreferenceWrite.this, WriteDetail.class);
-                        String path = "/data/data/com.example.xiao.preferenceswrite/shared_prefs/SharedPreferencesRead.xml";
+                        String path = "/data/data/com.javiersantos.mlmanager/shared_prefs/com.javiersantos.mlmanager_preferences.xml";
                         intent.putExtra("path",path);
                         startActivity(intent);
                         break;

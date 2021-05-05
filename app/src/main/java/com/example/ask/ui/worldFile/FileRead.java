@@ -40,7 +40,7 @@ public class FileRead extends Activity {
         setContentView(R.layout.activity_file_list);
 
         listView = findViewById(R.id.list_item);
-        path = "/data/data/"+ "com.example.xiao.fileread"+"/files";
+        path = "/data/data/"+ "com.example.avjindersinghsekhon.minimaltodo"+"/files";
         messageList = getFileList();
         msgAdapter = new MsgAdapter(this,messageList);
         listView.setAdapter(msgAdapter);
@@ -52,7 +52,7 @@ public class FileRead extends Activity {
                 switch (meg){
                     case "读取文件内容":
                         Intent intent = new Intent(FileRead.this,ReadDetail.class);
-                        String path = "/data/data/com.example.xiao.fileread/files/FileRead.txt";
+                        String path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/todoitems.json";
                         intent.putExtra("path",path);
                         startActivity(intent);
                         break;

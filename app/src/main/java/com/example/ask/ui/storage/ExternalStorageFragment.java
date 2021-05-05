@@ -2,6 +2,7 @@ package com.example.ask.ui.storage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,9 +43,13 @@ public class ExternalStorageFragment extends Fragment {
                         Intent intent = new Intent(getActivity(), DataInjection.class);
                         startActivity(intent);
                         break;
+//                    case "信息泄露":
+//                        Intent intent1 = new Intent(getActivity(), InformationLeak.class);
+//                        startActivity(intent1);
+//                        break;
                     case "信息泄露":
-                        Intent intent1 = new Intent(getActivity(), InformationLeak.class);
-                        startActivity(intent1);
+                        Intent intent2 = new Intent(getActivity(), VideoInformationLeak.class);
+                        startActivity(intent2);
                         break;
                 }
             }

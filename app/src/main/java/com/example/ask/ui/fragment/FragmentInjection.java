@@ -41,9 +41,9 @@ public class FragmentInjection extends Fragment {
                 switch (meg){
                     case "Fragment注入":
                         Intent intent = new Intent();
-                        intent.setPackage("com.example.fragmentinjection");
-                        intent.setClassName("com.example.fragmentinjection", "com.example.fragmentinjection.MainActivity");
-                        intent.putExtra("fname", "com.example.fragmentinjection.EmailFragment");
+                        intent.setPackage("com.example.karantinain");
+                        intent.setClassName("com.example.karantinain", "com.example.karantinain.Login.ForgotPassword.ResetPasswordActivity");
+                        intent.putExtra("fname", "com.example.karantinain.Login.ForgotPassword.VerifikasiFragment");
                         startActivity(intent);
                         break;
                 }

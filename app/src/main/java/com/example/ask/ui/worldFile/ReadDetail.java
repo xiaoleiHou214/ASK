@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.ask.R;
 import com.example.ask.adapter.MsgAdapter;
+import com.example.ask.util.FileUtil;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -20,8 +21,9 @@ public class ReadDetail extends Activity {
     private TextView readText;
     private Button readBtn;
     private String filePath;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_detail);
 
@@ -37,19 +39,25 @@ public class ReadDetail extends Activity {
         });
     }
 
-    public void Read(){
+    public void Read() {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(
                 new FileInputStream(filePath)));) {
             StringBuilder all = new StringBuilder();
             String line = null;
-            while ((line=br.readLine())!=null){
+            while ((line = br.readLine()) != null) {
                 all.append(line);
                 all.append("\n");
             }
             readText.setText(all.toString());
-
+            FileUtil.saveResultToFile("读取文件内容成功！", this);
+            FileUtil.saveResultToFile("文件内容：", this);
+            FileUtil.saveResultToFile(all.toString(), this);
+            FileUtil.saveResultToFile("文件可读漏洞利用成功！", this);
         } catch (IOException e) {
             Toast.makeText(this, "读取失败", Toast.LENGTH_SHORT).show();
+            FileUtil.saveResultToFile("读取文件内容失败！", this);
+            FileUtil.saveResultToFile("Error：" + e.toString(), this);
+            FileUtil.saveResultToFile("文件可读漏洞利用失败！", this);
             e.printStackTrace();
         }
     }

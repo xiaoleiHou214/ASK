@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.example.ask.R;
 import com.example.ask.adapter.MsgAdapter;
 import com.example.ask.entity.Message;
+import com.example.ask.util.FileUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,36 +27,37 @@ public class FileWrite extends Activity {
         setContentView(R.layout.activity_file_list);
 
         listView = findViewById(R.id.list_item);
-        path = "/data/data/"+ "com.example.avjindersinghsekhon.minimaltodo"+"/files";
+        Intent receiverIntent = getIntent();
+        path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/" + receiverIntent.getStringExtra("path");
         messageList = getFileList();
         msgAdapter = new MsgAdapter(this,messageList);
         listView.setAdapter(msgAdapter);
+        FileUtil.saveResultToFile("进入可写文件列表页面。", this);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 String meg = messageList.get(position).getContent();
-                switch (meg){
+                /*switch (meg){
                     case "写入文件内容":
                         Intent intent = new Intent(FileWrite.this,WriteDetail.class);
                         String path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/todoitems.json";
                         intent.putExtra("path",path);
                         startActivity(intent);
                         break;
-                }
+                }*/
+                FileUtil.saveResultToFile("点击进入path路径：" + path, FileWrite.this);
+                Intent intent = new Intent(FileWrite.this, WriteDetail.class);
+                intent.putExtra("path", path);
+                startActivity(intent);
             }
         });
     }
 
     private List<Message> getFileList(){
-        //List<File> list = FileUtil.listFileSortByModifyTime(path);
         List<Message> messages = new ArrayList<>();
-        /*for (int i=0;i<list.size();i++){
-            Message msg = new Message(list.get(i).getName());
-            messages.add(msg);
-        }*/
-        Message msg = new Message("写入文件内容");
-        messages.add(msg);
+        Message message = new Message(path);
+        messages.add(message);
         return messages;
     }
 }

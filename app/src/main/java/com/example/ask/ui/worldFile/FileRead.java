@@ -1,6 +1,7 @@
 package com.example.ask.ui.worldFile;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -35,52 +36,42 @@ public class FileRead extends Activity {
     private String path;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_list);
 
         listView = findViewById(R.id.list_item);
-        path = "/data/data/"+ "com.example.avjindersinghsekhon.minimaltodo"+"/files";
+        Intent receiverIntent = getIntent();
+        path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/" + receiverIntent.getStringExtra("path");
         messageList = getFileList();
-        msgAdapter = new MsgAdapter(this,messageList);
+        msgAdapter = new MsgAdapter(this, messageList);
         listView.setAdapter(msgAdapter);
+        FileUtil.saveResultToFile("进入可读文件列表页面。", this);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                String meg = messageList.get(position).getContent();
-                switch (meg){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                /*String meg = messageList.get(position).getContent();
+                switch (meg) {
                     case "读取文件内容":
                         Intent intent = new Intent(FileRead.this,ReadDetail.class);
                         String path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/todoitems.json";
                         intent.putExtra("path",path);
                         startActivity(intent);
                         break;
-                }
+                }*/
+                FileUtil.saveResultToFile("点击进入path路径：" + path, FileRead.this);
+                Intent intent = new Intent(FileRead.this, ReadDetail.class);
+                intent.putExtra("path", path);
+                startActivity(intent);
             }
         });
     }
 
-    private List<Message> getFileList(){
-        //List<File> list = FileUtil.listFileSortByModifyTime(path);
+    private List<Message> getFileList() {
         List<Message> messages = new ArrayList<>();
-        /*for (int i=0;i<list.size();i++){
-            Message msg = new Message(list.get(i).getName());
-            messages.add(msg);
-        }*/
-        Message msg = new Message("读取文件内容");
-        messages.add(msg);
+        Message message = new Message(path);
+        messages.add(message);
         return messages;
-    }
-
-    public void Read(){
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                new FileInputStream("/data/data/com.example.xiao.fileread/files/FileRead.txt")));) {
-            String line = br.readLine();
-            Toast.makeText(this, line, Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
-            Toast.makeText(this, "读取失败", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }
     }
 }

@@ -21,7 +21,7 @@
     <string name="menu_allow_backup">数据任意备份</string>
     <string name="menu_debuggable">程序任意调试</string>
 
-    <string name="packageName">com.example.xiao.fileread</string>
+    <string name="packageName">com.example.ask</string>
 
     <string name="home_second">Home Second</string>
     <string name="exposed_components">组件暴露</string>
@@ -29,6 +29,9 @@
     <string name="webview">WebView弱配置</string>
     <string name="intent_scheme_url">Intent Scheme Url利用</string>
     <string-array name="test">
-        <item></item>
+        <item>type</item>
+        <item>key</item>
+        <item>vaule</item>
     </string-array>
+    <string name="bat_path">D:\Users\95342\Desktop\app\</string>
 </resources>

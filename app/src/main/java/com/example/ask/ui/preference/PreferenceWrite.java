@@ -12,6 +12,7 @@ import com.example.ask.adapter.MsgAdapter;
 import com.example.ask.entity.Message;
 import com.example.ask.ui.worldFile.FileWrite;
 import com.example.ask.ui.worldFile.WriteDetail;
+import com.example.ask.util.FileUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ public class PreferenceWrite extends Activity {
     private ListView listView;
     private List<Message> messageList;
     private MsgAdapter msgAdapter;
+    private String path;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -28,35 +30,37 @@ public class PreferenceWrite extends Activity {
         setContentView(R.layout.activity_file_list);
 
         listView = findViewById(R.id.list_item);
+        Intent receiverIntent = getIntent();
+        path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/" + receiverIntent.getStringExtra("path");
         messageList = getFileList();
         msgAdapter = new MsgAdapter(this,messageList);
         listView.setAdapter(msgAdapter);
+        FileUtil.saveResultToFile("进入可写配置文件列表页面。", this);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 String meg = messageList.get(position).getContent();
-                switch (meg){
+                /*switch (meg){
                     case "写入配置文件内容":
                         Intent intent = new Intent(PreferenceWrite.this, WriteDetail.class);
                         String path = "/data/data/com.javiersantos.mlmanager/shared_prefs/com.javiersantos.mlmanager_preferences.xml";
                         intent.putExtra("path",path);
                         startActivity(intent);
                         break;
-                }
+                }*/
+                FileUtil.saveResultToFile("点击进入path路径：" + path, PreferenceWrite.this);
+                Intent intent = new Intent(PreferenceWrite.this, WriteDetail.class);
+                intent.putExtra("path", path);
+                startActivity(intent);
             }
         });
     }
 
     private List<Message> getFileList(){
-        //List<File> list = FileUtil.listFileSortByModifyTime(path);
         List<Message> messages = new ArrayList<>();
-        /*for (int i=0;i<list.size();i++){
-            Message msg = new Message(list.get(i).getName());
-            messages.add(msg);
-        }*/
-        Message msg = new Message("写入配置文件内容");
-        messages.add(msg);
+        Message message = new Message(path);
+        messages.add(message);
         return messages;
     }
 }

@@ -40,7 +40,7 @@ public class WorldFile extends Fragment {
                 String meg = msgList.get(position).getContent();
                 switch (meg){
                     case "全局文件可读":
-                        Intent intent = new Intent(getActivity(), FileRead.class);
+                        Intent intent = new Intent(getActivity(), com.example.ask.ui.worldFile.FileRead.class);
                         startActivity(intent);
                         break;
                     case "全局文件可写":

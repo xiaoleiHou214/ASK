@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.ask.R;
+import com.example.ask.util.FileUtil;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -52,8 +53,12 @@ public class WriteDetail extends Activity {
                 new FileOutputStream(filePath)));){
             bw.write(writeText.getText().toString());
             Toast.makeText(this, "写入成功！", Toast.LENGTH_SHORT).show();
+            FileUtil.saveResultToFile("写入文件内容成功！", this);
+            FileUtil.saveResultToFile("文件可写漏洞利用成功！", this);
         } catch (IOException e) {
             Toast.makeText(this, "操作失败", Toast.LENGTH_SHORT).show();
+            FileUtil.saveResultToFile("写入文件内容失败！", this);
+            FileUtil.saveResultToFile("文件可写漏洞利用失败！", this);
             e.printStackTrace();
         }
     }
@@ -68,9 +73,13 @@ public class WriteDetail extends Activity {
                 all.append("\n");
             }
             writeText.setText(all.toString());
-
+            FileUtil.saveResultToFile("读取文件内容成功！", this);
+            FileUtil.saveResultToFile("文件内容：", this);
+            FileUtil.saveResultToFile(all.toString(), this);
         } catch (IOException e) {
             Toast.makeText(this, "读取失败", Toast.LENGTH_SHORT).show();
+            FileUtil.saveResultToFile("读取文件内容失败！", this);
+            FileUtil.saveResultToFile("Error：" + e.toString(), this);
             e.printStackTrace();
         }
     }

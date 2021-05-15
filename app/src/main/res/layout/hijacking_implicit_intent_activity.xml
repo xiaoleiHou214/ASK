@@ -6,8 +6,7 @@
     <TextView
         android:id="@+id/implicit_intent_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:singleline="false"/>
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>

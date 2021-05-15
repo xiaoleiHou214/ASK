@@ -3,6 +3,8 @@ package com.example.ask.util;
 import android.content.Context;
 import android.content.res.Resources;
 
+import com.example.ask.R;
+
 public class ResourceUtil {
 
     public static String getStringByName(Context context, String name) {

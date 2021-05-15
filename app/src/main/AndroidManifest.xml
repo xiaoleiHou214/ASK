@@ -48,6 +48,18 @@
                 <action android:name="android.intent.action.ask.goExploit"/>
             </intent-filter>
         </receiver>
+        <activity android:name=".ui.implicitIntent.HijackingImplicitIntentActivity" android:enabled="true" android:exported="true">
+        </activity>
+        <service android:name=".ui.implicitIntent.HijackingImplictIntentService" android:enabled="true" android:exported="true">
+
+        </service>
+        <receiver android:name=".ui.implicitIntent.HijackingImplicitIntentReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.org.gnucash.android.transaction"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

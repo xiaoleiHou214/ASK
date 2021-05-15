@@ -54,11 +54,6 @@
 
         </service>
         <receiver android:name=".ui.implicitIntent.HijackingImplicitIntentReceiver" android:enabled="true" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.INSERT" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.org.gnucash.android.transaction"/>
-            </intent-filter>
         </receiver>
     </application>
 

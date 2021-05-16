@@ -18,7 +18,7 @@ import com.example.ask.util.ResourceUtil;
 
 import static com.example.ask.broadcast.AskBroadcastReceiver.category_id;
 
-public class HijackingImplictIntentService extends Service {
+class HijackingImplicitIntentService extends Service {
     Handler handler;
     @Override
     public void onCreate() {
@@ -35,14 +35,14 @@ public class HijackingImplictIntentService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("ExportedService","service onStartCommand");
         handler=new Handler(Looper.getMainLooper());
-        FileUtil.saveResultToFile("成功劫持隐式intent。", HijackingImplictIntentService.this);
+        FileUtil.saveResultToFile("成功劫持隐式intent。", HijackingImplicitIntentService.this);
         category_id = "implicit_intent_4";
         String name = "R.array." + category_id + "_extras";
-        String[] extras = ResourceUtil.getStringArrayByName(HijackingImplictIntentService.this, name);
-        FileUtil.saveResultToFile("开始解析intent中的数据........", HijackingImplictIntentService.this);
+        String[] extras = ResourceUtil.getStringArrayByName(HijackingImplicitIntentService.this, name);
+        FileUtil.saveResultToFile("开始解析intent中的数据........", HijackingImplicitIntentService.this);
         if (extras == null){
-            FileUtil.saveResultToFile("所劫持的intent中无数据。", HijackingImplictIntentService.this);
-            FileUtil.saveResultToFile("利用失败。", HijackingImplictIntentService.this);
+            FileUtil.saveResultToFile("所劫持的intent中无数据。", HijackingImplicitIntentService.this);
+            FileUtil.saveResultToFile("利用失败。", HijackingImplicitIntentService.this);
             handler.post(new Runnable(){
                 public void run(){
                     Toast.makeText(getApplicationContext(), "成功劫持隐式intent。\n" +
@@ -50,15 +50,15 @@ public class HijackingImplictIntentService extends Service {
                 }
             });
         } else{
-            FileUtil.saveResultToFile("intent数据解析如下：", HijackingImplictIntentService.this);
+            FileUtil.saveResultToFile("intent数据解析如下：", HijackingImplicitIntentService.this);
             Bundle bundle = intent.getExtras();
             String s = "";
             for (String extra_key : extras){
                 String value = bundle.getString(extra_key);
                 s = s + extra_key + ":   " + value.toString() + "\n";
-                FileUtil.saveResultToFile(extra_key + ":   " + value.toString(), HijackingImplictIntentService.this);
+                FileUtil.saveResultToFile(extra_key + ":   " + value.toString(), HijackingImplicitIntentService.this);
             }
-            FileUtil.saveResultToFile("利用成功。", HijackingImplictIntentService.this);
+            FileUtil.saveResultToFile("利用成功。", HijackingImplicitIntentService.this);
             final String finalS = s;
             handler.post(new Runnable(){
                 public void run(){

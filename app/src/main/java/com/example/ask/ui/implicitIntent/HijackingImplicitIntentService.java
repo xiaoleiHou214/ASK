@@ -18,7 +18,7 @@ import com.example.ask.util.ResourceUtil;
 
 import static com.example.ask.broadcast.AskBroadcastReceiver.category_id;
 
-class HijackingImplicitIntentService extends Service {
+public class HijackingImplicitIntentService extends Service {
     Handler handler;
     @Override
     public void onCreate() {

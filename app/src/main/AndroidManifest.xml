@@ -51,7 +51,6 @@
         <activity android:name=".ui.implicitIntent.HijackingImplicitIntentActivity" android:enabled="true" android:exported="true">
         </activity>
         <service android:name=".ui.implicitIntent.HijackingImplicitIntentService" android:enabled="true" android:exported="true">
-
         </service>
         <receiver android:name=".ui.implicitIntent.HijackingImplicitIntentReceiver" android:enabled="true" android:exported="true">
         </receiver>

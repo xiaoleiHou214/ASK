@@ -55,8 +55,11 @@ class HijackingImplicitIntentService extends Service {
             String s = "";
             for (String extra_key : extras){
                 String value = bundle.getString(extra_key);
-                s = s + extra_key + ":   " + value.toString() + "\n";
-                FileUtil.saveResultToFile(extra_key + ":   " + value.toString(), HijackingImplicitIntentService.this);
+                if (value == null){
+                    continue;
+                }
+                s = s + extra_key + ":   " + value + "\n";
+                FileUtil.saveResultToFile(extra_key + ":   " + value, HijackingImplicitIntentService.this);
             }
             FileUtil.saveResultToFile("利用成功。", HijackingImplicitIntentService.this);
             final String finalS = s;

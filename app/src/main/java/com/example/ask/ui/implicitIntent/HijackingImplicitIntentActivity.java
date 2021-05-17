@@ -39,8 +39,11 @@ public class HijackingImplicitIntentActivity extends Activity {
             Bundle bundle = intent.getExtras();
             for (String extra_key : extras){
                 String value = bundle.getString(extra_key);
-                FileUtil.saveResultToFile(extra_key + ":   " + value.toString(), HijackingImplicitIntentActivity.this);
-                textView.setText(extra_key + ":   " + value.toString() + "\n");
+                if (value == null){
+                    continue;
+                }
+                FileUtil.saveResultToFile(extra_key + ":   " + value, HijackingImplicitIntentActivity.this);
+                textView.setText(extra_key + ":   " + value + "\n");
             }
             FileUtil.saveResultToFile("利用成功。", HijackingImplicitIntentActivity.this);
             textView.setText("利用成功。\n");

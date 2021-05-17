@@ -74,6 +74,7 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
             case "隐式Intent调用":
                 category_id = "implicit_intent" + "_" + id;
                 FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("请打开待测应用，并操作使其发送隐式Intent。", context);
                 break;
             case "WebView弱配置接口":
                 category_id = "weak_configured_webview" + "_" + id;

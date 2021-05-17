@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.example.ask.MainActivity;
 import com.example.ask.R;
+import com.example.ask.ui.intentSchemeUrl.intentSchemeUrl;
 import com.example.ask.ui.preference.PreferenceRead;
 import com.example.ask.ui.preference.PreferenceWrite;
 import com.example.ask.ui.worldFile.FileRead;
@@ -70,10 +71,15 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 break;
             case "IntentSchemeURLs漏洞":
                 category_id = "intent_scheme_url" + "_" + id;
+                FileUtil.saveResultToFile("", context);
+                Intent intent1 = new Intent();
+                intent1.setClass(context, intentSchemeUrl.class);
+                context.startActivity(intent1);
                 break;
             case "隐式Intent调用":
                 category_id = "implicit_intent" + "_" + id;
                 FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("请打开待测应用，并操作使其发送隐式Intent。", context);
                 break;
             case "WebView弱配置接口":
                 category_id = "weak_configured_webview" + "_" + id;

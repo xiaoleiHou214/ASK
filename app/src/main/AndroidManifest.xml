@@ -50,11 +50,20 @@
         </receiver>
         <activity android:name=".ui.implicitIntent.HijackingImplicitIntentActivity" android:enabled="true" android:exported="true">
         </activity>
-        <service android:name=".ui.implicitIntent.HijackingImplictIntentService" android:enabled="true" android:exported="true">
-
+        <service android:name=".ui.implicitIntent.HijackingImplicitIntentService" android:enabled="true" android:exported="true">
         </service>
         <receiver android:name=".ui.implicitIntent.HijackingImplicitIntentReceiver" android:enabled="true" android:exported="true">
         </receiver>
+        <activity android:name=".ui.intentSchemeUrl.intentSchemeUrlActivity"/>
+        <activity android:name=".ui.intentSchemeUrl.intentSchemeUrlTestActivity" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="intentschemeurltest" android:host="scan" android:path="/"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

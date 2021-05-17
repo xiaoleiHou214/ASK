@@ -27,7 +27,7 @@
     <string name="exposed_components">组件暴露</string>
     <string name="implicit_intent_hijacking">隐式intent劫持</string>
     <string name="webview">WebView弱配置</string>
-    <string name="intent_scheme_url">Intent Scheme Url利用</string>
+    <string name="intent_scheme_url">发送Intent Scheme Url</string>
     <string-array name="test">
         <item>type</item>
         <item>key</item>

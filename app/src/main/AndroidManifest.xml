@@ -54,6 +54,8 @@
         </service>
         <receiver android:name=".ui.implicitIntent.HijackingImplicitIntentReceiver" android:enabled="true" android:exported="true">
         </receiver>
+        <activity android:name=".ui.intentSchemeUrl.intentSchemeUrlActivity"/>
+        <activity android:name=".ui.intentSchemeUrl.intentSchemeUrlTestActivity" android:enabled="true" android:exported="true"/>
     </application>
 
 </manifest>

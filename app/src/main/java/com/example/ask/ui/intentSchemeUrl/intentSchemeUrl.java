@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.ask.R;
+import com.example.ask.util.FileUtil;
 
 public class intentSchemeUrl extends Fragment {
     @Nullable
@@ -24,7 +25,7 @@ public class intentSchemeUrl extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setAction("android.intent.action.VIEW");
+                intent.setAction("android.intent.action");
                 Uri content_url = Uri.parse("http://10.0.2.2:5000/intentSchemeUrl");
                 //Uri content_url = Uri.parse("\"intent:#Intent;action=com.example.addcontact;S.name=liuao;S.phoneNum=123222223;end\"");
                 intent.setData(content_url);

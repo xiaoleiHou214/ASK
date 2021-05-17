@@ -25,7 +25,8 @@ public class intentSchemeUrl extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setAction("android.intent.action");
+
+                intent.setAction(Intent.ACTION_VIEW);
                 Uri content_url = Uri.parse("http://10.0.2.2:5000/intentSchemeUrl");
                 //Uri content_url = Uri.parse("\"intent:#Intent;action=com.example.addcontact;S.name=liuao;S.phoneNum=123222223;end\"");
                 intent.setData(content_url);

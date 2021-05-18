@@ -30,7 +30,7 @@ public class FragmentInjection extends Fragment {
         View root = inflater.inflate(R.layout.fragment_injection, container, false);
 
         listView=root.findViewById(R.id.list_item);
-        msgList = MsgUtil.getList("FragmentInjection");
+        msgList = MsgUtil.getList("FragmentInjection",getContext());
         adapter = new MsgAdapter(getActivity(),msgList);
         listView.setAdapter(adapter);
 

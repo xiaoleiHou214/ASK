@@ -7,51 +7,63 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_home"
+            android:visible="true" />
         <item
             android:id="@+id/nav_storage"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_storage" />
+            android:title="@string/menu_storage"
+            android:visible="false" />
         <item
             android:id="@+id/nav_world_file"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_world_file" />
+            android:title="@string/menu_world_file"
+            android:visible="false" />
         <item
             android:id="@+id/nav_shared_preferences"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_shared_preferences" />
+            android:title="@string/menu_shared_preferences"
+            android:visible="false" />
         <item
             android:id="@+id/nav_fragment_injection"
             android:icon="@drawable/ic_menu_send"
-            android:title="@string/menu_fragment_injection"/>
+            android:title="@string/menu_fragment_injection"
+            android:visible="false" />
         <item
             android:id="@+id/nav_exposed_component"
             android:icon="@drawable/abc_vector_test"
-            android:title="@string/exposed_components"/>
+            android:title="@string/exposed_components"
+            android:visible="false" />
         <item
             android:id="@+id/nav_implicit_intent_hijacking"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/implicit_intent_hijacking"/>
+            android:title="@string/implicit_intent_hijacking"
+            android:visible="false" />
         <item
             android:id="@+id/nav_webview"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/webview"/>
+            android:title="@string/webview"
+            android:visible="false" />
         <item
             android:id="@+id/nav_intent_scheme_url"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/intent_scheme_url"/>
+            android:title="@string/intent_scheme_url"
+            android:visible="false" />
         <item
             android:id="@+id/nav_dynamic_Broadcast"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_dynamic_reg_broadcast"/>
+            android:title="@string/menu_dynamic_reg_broadcast"
+            android:visible="false" />
         <item
             android:id="@+id/nav_allow_backup"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_allow_backup"/>
+            android:title="@string/menu_allow_backup"
+            android:visible="false" />
         <item
             android:id="@+id/nav_debuggable"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_debuggable"/>
+            android:title="@string/menu_debuggable"
+            android:visible="false" />
     </group>
 
     <item android:title="Communicate">
@@ -59,11 +71,13 @@
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
+                android:title="@string/menu_share"
+                android:visible="false" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:title="@string/menu_send"
+                android:visible="false" />
         </menu>
     </item>
 

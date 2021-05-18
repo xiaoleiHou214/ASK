@@ -45,6 +45,7 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 break;
             case "SD卡非法访问":
                 category_id = "external_storage" + "_" + id;
+                sdIllegalAccess(context,category_id);
                 break;
             case "程序任意调试":
                 category_id = "debuggable" + "_" + id;
@@ -149,6 +150,8 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
         context.startActivity(intent);
     }
     //SD卡数据存储
+    private void sdIllegalAccess(Context context,String categoryId){
+    }
     //数据注入
     //数据泄露
     //Fragment注入

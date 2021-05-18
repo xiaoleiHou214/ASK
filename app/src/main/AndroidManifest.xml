@@ -63,6 +63,7 @@
                 <data android:scheme="intentschemeurltest" android:host="scan" android:path="/"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.exposedComponents.ExportedComponent"/>
 
     </application>
 

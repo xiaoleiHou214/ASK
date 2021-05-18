@@ -36,7 +36,6 @@ public class HijackingImplicitIntentService extends Service {
         Log.i("ExportedService","service onStartCommand");
         handler=new Handler(Looper.getMainLooper());
         FileUtil.saveResultToFile("成功劫持隐式intent。", HijackingImplicitIntentService.this);
-        category_id = "implicit_intent_4";
         String name = "R.array." + category_id + "_extras";
         String[] extras = ResourceUtil.getStringArrayByName(HijackingImplicitIntentService.this, name);
         FileUtil.saveResultToFile("开始解析intent中的数据........", HijackingImplicitIntentService.this);

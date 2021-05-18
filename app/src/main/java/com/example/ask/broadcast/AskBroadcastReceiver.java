@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.example.ask.MainActivity;
 import com.example.ask.R;
+import com.example.ask.ui.exposedComponents.ExportedComponent;
 import com.example.ask.ui.intentSchemeUrl.intentSchemeUrl;
 import com.example.ask.ui.preference.PreferenceRead;
 import com.example.ask.ui.preference.PreferenceWrite;
@@ -53,21 +54,41 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 break;
             case "Activity组件暴漏":
                 category_id = "exported_activity" + "_" + id;
+                FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
+                Intent intent2 = new Intent();
+                intent2.setClass(context, ExportedComponent.class);
+                context.startActivity(intent2);
                 break;
             case "Service组件暴漏":
                 category_id = "exported_service" + "_" + id;
+                FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
+                Intent intent3 = new Intent();
+                intent3.setClass(context, ExportedComponent.class);
+                context.startActivity(intent3);
                 break;
             case "ContentProvider组件暴漏":
-                category_id = "exported_receiver" + "_" + id;
+                category_id = "exported_provide" + "_" + id;
                 break;
             case "BroadcastReceiver组件暴漏":
-                category_id = "exported_provider" + "_" + id;
+                category_id = "exported_receiver" + "_" + id;
+                FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
+                Intent intent4 = new Intent();
+                intent4.setClass(context, ExportedComponent.class);
+                context.startActivity(intent4);
                 break;
             case "动态注册Broadcast":
-                category_id = "file_world_readable" + "_" + id;
+                category_id = "dynamic_register_receiver" + "_" + id;
+                FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
+                Intent intent5 = new Intent();
+                intent5.setClass(context, ExportedComponent.class);
+                context.startActivity(intent5);
                 break;
             case "Fragment注入":
-                category_id = "dynamic_register_receiver" + "_" + id;
+                category_id = "fragment_injection" + "_" + id;
                 break;
             case "IntentSchemeURLs漏洞":
                 category_id = "intent_scheme_url" + "_" + id;

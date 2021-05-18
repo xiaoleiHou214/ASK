@@ -16,7 +16,6 @@ public class HijackingImplicitIntentReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         FileUtil.saveResultToFile("成功劫持隐式intent。", context);
-        category_id = "implicit_intent_4";
         String name = category_id + "_extras";
         String[] extras = ResourceUtil.getStringArrayByName(context, name);
         FileUtil.saveResultToFile("开始解析intent中的数据........", context);

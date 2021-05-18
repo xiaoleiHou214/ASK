@@ -26,20 +26,21 @@ public class DynamicRegBroadcast extends Fragment {
     private ListView listView;
     private List<Message> msgList;
     private MsgAdapter adapter;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_dynamic_reg_broadcast, container, false);
 
-        listView=root.findViewById(R.id.list_item);
-        msgList = MsgUtil.getList("DynamicRegBroadcast");
-        adapter = new MsgAdapter(getActivity(),msgList);
+        listView = root.findViewById(R.id.list_item);
+        msgList = MsgUtil.getList("DynamicRegBroadcast", getContext());
+        adapter = new MsgAdapter(getActivity(), msgList);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String meg = msgList.get(position).getContent();
-                switch (meg){
+                switch (meg) {
                     case "发送广播":
                         Intent intent = new Intent(getActivity(), DynamicRegBroadcastActivity.class);
                         startActivity(intent);

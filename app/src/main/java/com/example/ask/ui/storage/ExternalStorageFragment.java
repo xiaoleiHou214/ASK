@@ -29,16 +29,16 @@ public class ExternalStorageFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_storage, container, false);
 
-        listView=root.findViewById(R.id.list_item);
-        msgList = MsgUtil.getList("Storage");
-        adapter = new MsgAdapter(getActivity(),msgList);
+        listView = root.findViewById(R.id.list_item);
+        msgList = MsgUtil.getList("Storage", getContext());
+        adapter = new MsgAdapter(getActivity(), msgList);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String meg = msgList.get(position).getContent();
-                switch (meg){
+                switch (meg) {
                     case "数据注入":
                         Intent intent = new Intent(getActivity(), DataInjection.class);
                         startActivity(intent);

@@ -53,6 +53,55 @@ public class MainActivity extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        System.out.println(R.string.file_world_readable);
+        if (getResources().getString(R.string.file_world_readable).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_storage).setVisible(true);
+        }
+        if (getResources().getString(R.string.file_world_writable).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_storage).setVisible(true);
+        }
+        if (getResources().getString(R.string.preference_world_readable).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_shared_preferences).setVisible(true);
+        }
+        if (getResources().getString(R.string.preference_world_writable).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_shared_preferences).setVisible(true);
+        }
+        if (getResources().getString(R.string.external_storage).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_storage).setVisible(true);
+        }
+        if (getResources().getString(R.string.fragment_injection).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_fragment_injection).setVisible(true);
+        }
+        if (getResources().getString(R.string.exported_activity).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_exposed_component).setVisible(true);
+        }
+        if (getResources().getString(R.string.exported_service).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_exposed_component).setVisible(true);
+        }
+        if (getResources().getString(R.string.exported_provider).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_exposed_component).setVisible(true);
+        }
+        if (getResources().getString(R.string.exported_receiver).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_exposed_component).setVisible(true);
+        }
+        if (getResources().getString(R.string.webview).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_webview).setVisible(true);
+        }
+        if (getResources().getString(R.string.intent_scheme_url).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_intent_scheme_url).setVisible(true);
+        }
+        if (getResources().getString(R.string.dynamic_register_receiver).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_dynamic_Broadcast).setVisible(true);
+        }
+        if (getResources().getString(R.string.allow_backup).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_allow_backup).setVisible(true);
+        }
+        if (getResources().getString(R.string.debuggable).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_debuggable).setVisible(true);
+        }
+        if (getResources().getString(R.string.implicit_intent).equals("1")){
+            navigationView.getMenu().findItem(R.id.nav_implicit_intent_hijacking).setVisible(true);
+        }
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -66,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+
         NavigationUI.setupWithNavController(navigationView, navController);
 
         IntentFilter intentFilter = new IntentFilter();

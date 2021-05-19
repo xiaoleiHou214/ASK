@@ -64,6 +64,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.exposedComponents.ExportedComponent"/>
+        <activity android:name=".ui.exposedComponents.ExportedProviderActivity"/>
 
     </application>
 

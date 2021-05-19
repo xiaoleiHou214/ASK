@@ -7,6 +7,7 @@ import android.content.Intent;
 import com.example.ask.MainActivity;
 import com.example.ask.R;
 import com.example.ask.ui.exposedComponents.ExportedComponent;
+import com.example.ask.ui.exposedComponents.ExportedProviderActivity;
 import com.example.ask.ui.intentSchemeUrl.intentSchemeUrl;
 import com.example.ask.ui.preference.PreferenceRead;
 import com.example.ask.ui.preference.PreferenceWrite;
@@ -71,6 +72,11 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 break;
             case "ContentProvider组件暴漏":
                 category_id = "exported_provide" + "_" + id;
+                FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
+                Intent intent6 = new Intent();
+                intent6.setClass(context, ExportedProviderActivity.class);
+                context.startActivity(intent6);
                 break;
             case "BroadcastReceiver组件暴漏":
                 category_id = "exported_receiver" + "_" + id;

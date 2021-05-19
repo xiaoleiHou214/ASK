@@ -22,7 +22,7 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String goExploit = intent.getStringExtra("goExploit");
-        String id = intent.getStringExtra("issueID");
+        String id = intent.getStringExtra("apkVulnerNum");
         switch (goExploit) {
             case "全局文件可读":
                 category_id = "file_world_readable" + "_" + id;
@@ -91,11 +91,18 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 FileUtil.saveResultToFile("", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent5 = new Intent();
+                intent5.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent5.setClass(context, ExportedComponent.class);
                 context.startActivity(intent5);
                 break;
             case "Fragment注入":
                 category_id = "fragment_injection" + "_" + id;
+                FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
+                Intent intent7 = new Intent();
+                intent7.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent7.setClass(context, ExportedComponent.class);
+                context.startActivity(intent7);
                 break;
             case "IntentSchemeURLs漏洞":
                 category_id = "intent_scheme_url" + "_" + id;

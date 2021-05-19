@@ -2,8 +2,8 @@
     <string name="app_name">ASK</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">ASK</string>
-    <string name="nav_header_subtitle">漏洞利用App</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -13,43 +13,25 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name="menu_fragment_injection">Fragment注入</string>
-    <string name="menu_storage">SD存储</string>
-    <string name="menu_world_file">全局文件读写</string>
-    <string name="menu_shared_preferences">配置文件读写</string>
-    <string name="menu_dynamic_reg_broadcast">动态注册Broadcast</string>
-    <string name="menu_allow_backup">数据任意备份</string>
-    <string name="menu_debuggable">程序任意调试</string>
+    <string name="menu_fragment_injection">Fragment&#27880;&#20837;</string>
+    <string name="menu_storage">SD&#23384;&#20648;</string>
+    <string name="menu_world_file">&#20840;&#23616;&#25991;&#20214;&#35835;&#20889;</string>
+    <string name="menu_shared_preferences">&#37197;&#32622;&#25991;&#20214;&#35835;&#20889;</string>
+    <string name="menu_dynamic_reg_broadcast">&#21160;&#24577;&#27880;&#20876;Broadcast</string>
+    <string name="menu_allow_backup">&#25968;&#25454;&#20219;&#24847;&#22791;&#20221;</string>
+    <string name="menu_debuggable">&#31243;&#24207;&#20219;&#24847;&#35843;&#35797;</string>
 
-    <string name="packageName">com.example.ask</string>
+    <string name="packageName">org.anothermonitor</string>
 
     <string name="home_second">Home Second</string>
-    <string name="exposed_components">组件暴露</string>
-    <string name="implicit_intent_hijacking">隐式intent劫持</string>
-    <string name="webview">WebView弱配置</string>
-    <string name="intent_scheme_url">发送Intent Scheme Url</string>
+    <string name="exposed_components">&#32452;&#20214;&#26292;&#38706;</string>
+    <string name="implicit_intent_hijacking">&#38544;&#24335;intent&#21163;&#25345;</string>
+    <string name="webview">WebView&#24369;&#37197;&#32622;</string>
+    <string name="intent_scheme_url">0</string>
     <string-array name="test">
         <item>type</item>
         <item>key</item>
         <item>vaule</item>
     </string-array>
     <string name="bat_path">D:\Users\95342\Desktop\app\</string>
-
-
-    <string name="exported_activity_1_tag_name">org.gnucash.android.ui.account.AccountsActivity</string><string name="exported_activity_1_package_name">org.gnucash.android</string><string-array name="exported_activity_1_actions"><item>android.intent.action.MAIN</item><item>android.intent.action.VIEW</item><item>android.intent.action.EDIT</item><item>android.intent.action.VIEW</item><item>android.intent.action.EDIT</item><item>android.intent.action.VIEW</item><item>android.intent.action.EDIT</item></string-array><string-array name="exported_activity_1_extras"><item>2131689643</item><item>"last_open_tab"</item><item>1</item><item>"org.gnucash.android.extra.TAB_INDEX"</item></string-array><string name="exported_activity_2_tag_name">org.gnucash.android.ui.homescreen.WidgetConfigurationActivity</string><string name="exported_activity_2_package_name">org.gnucash.android</string><string-array name="exported_activity_2_actions"><item>android.appwidget.action.APPWIDGET_CONFIGURE</item></string-array><string-array name="exported_activity_2_extras"><item>null</item><item>"book_uid"</item><item>"account_uid"</item></string-array><string name="exported_activity_3_tag_name">com.dropbox.core.android.AuthActivity</string><string name="exported_activity_3_package_name">org.gnucash.android</string><string-array name="exported_activity_3_actions"><item>android.intent.action.VIEW</item></string-array><string name="exported_receiver_1_tag_name">org.gnucash.android.receivers.TransactionRecorder</string><string name="exported_receiver_1_package_name">org.gnucash.android</string><string-array name="exported_receiver_1_actions"><item>android.intent.action.INSERT</item></string-array><string name="exported_receiver_2_tag_name">org.gnucash.android.receivers.AccountCreator</string><string name="exported_receiver_2_package_name">org.gnucash.android</string><string-array name="exported_receiver_2_actions"><item>android.intent.action.INSERT</item></string-array><string-array name="exported_receiver_2_extras"><item>"android.intent.extra.TITLE"</item><item>"org.gnucash.android.extra.parent_uid"</item></string-array><string name="exported_receiver_3_tag_name">org.gnucash.android.receivers.TransactionAppWidgetProvider</string><string name="exported_receiver_3_package_name">org.gnucash.android</string><string-array name="exported_receiver_3_actions"><item>android.appwidget.action.APPWIDGET_UPDATE</item></string-array><string name="external_storage_1_package_name">org.gnucash.android</string><string-array name="implicit_intent_1_action"><item>android.intent.action.GET_CONTENT</item></string-array><string name="implicit_intent_1_mime_type">*/*</string><string-array name="implicit_intent_2_action"><item>android.intent.action.GET_CONTENT</item></string-array><string name="implicit_intent_2_mime_type">*/*</string><string-array name="implicit_intent_3_action"><item>loginReplyMessage</item></string-array><string-array name="implicit_intent_3_extras"><item>status</item><item>nickName</item></string-array><string-array name="implicit_intent_4_action"><item>android.intent.action.INSERT</item></string-array><string name="implicit_intent_4_mime_type">vnd.android.cursor.item/vnd.org.gnucash.android.transaction</string><string-array name="implicit_intent_4_extras"><item>android.intent.extra.TITLE</item><item>android.intent.extra.TEXT</item><item>org.gnucash.android.extra.currency_code</item><item>org.gnucash.android.extra.transaction.splits</item></string-array><string-array name="implicit_intent_5_action"><item>android.media.action.IMAGE_CAPTURE</item></string-array><string name="implicit_intent_5_mime_type">image/*</string><string-array name="implicit_intent_5_extras"><item>output</item><item>android.intent.extra.videoQuality</item></string-array><string-array name="implicit_intent_6_action"><item>android.intent.action.GET_CONTENT</item></string-array><string name="implicit_intent_6_mime_type">image/*</string><string-array name="implicit_intent_6_extras"><item>output</item><item>android.intent.extra.videoQuality</item></string-array><string-array name="implicit_intent_7_action"><item>android.intent.action.VIEW</item></string-array>
-    <string name="file_world_writable">0</string>
-    <string name="debuggable">1</string>
-    <string name="preference_world_readable">0</string>
-    <string name="exported_receiver">1</string>
-    <string name="exported_service">0</string>
-    <string name="implicit_intent">1</string>
-    <string name="exported_provider">0</string>
-    <string name="dynamic_register_receiver">0</string>
-    <string name="fragment_injection">0</string>
-    <string name="allow_backup">1</string>
-    <string name="file_world_readable">0</string>
-    <string name="weak_configured_webview">0</string>
-    <string name="exported_activity">1</string>
-    <string name="preference_world_writable">0</string>
-    <string name="external_storage">1</string>
-</resources>
+    <string name="external_storage_1_package_name">org.anothermonitor</string><string name="external_storage_2_package_name">org.anothermonitor</string><string-array name="implicit_intent_1_action"><item>android.intent.action.CLOSE_SYSTEM_DIALOGS</item></string-array><string-array name="implicit_intent_2_action"><item>android.intent.action.CLOSE_SYSTEM_DIALOGS</item></string-array><string-array name="implicit_intent_3_action"><item>actionCloseActivity</item></string-array><string-array name="implicit_intent_4_action"><item>android.intent.action.CLOSE_SYSTEM_DIALOGS</item></string-array><string name="external_storage">1</string><string name="implicit_intent">1</string><string name="allow_backup">1</string><string name="debuggable">1</string><string name="exported_receiver">0</string><string name="weak_configured_webview">0</string><string name="file_world_writable">0</string><string name="file_world_readable">0</string><string name="preference_world_readable">0</string><string name="dynamic_register_receiver">0</string><string name="preference_world_writable">0</string><string name="exported_activity">0</string><string name="exported_service">0</string><string name="exported_provider">1</string><string name="fragment_injection">0</string></resources>

@@ -13,6 +13,7 @@ import com.example.ask.MainActivity;
 import com.example.ask.R;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,11 +40,19 @@ public class DataInjection extends Activity {
 
     private void writeToFile() {
         TextView res = (TextView) findViewById(R.id.result);
-        File file = new File(getExternalFilesDir(null), "AnotherMonitor/AnotherMonitorRecord-2021-04-16-15-14-48.csv");
+        File file = new File(getExternalFilesDir(null), "AnotherMonitor/AnotherMonitorRecord-2021-05-18-23-35-11.csv");
         String absPath = file.getAbsolutePath();
         String myPath = absPath.replace("com.example.ask", "org.anothermonitor");
         Log.d("ExternalStorageBenign", "Benign = " + file.getAbsolutePath());
         Log.d("ExternalStorageBenign", "Mal = " + myPath);
+        try{
+            InputStream test = new FileInputStream(new File(myPath));
+            byte[] datas = new byte[test.available()];
+            test.read(datas);
+            System.out.println(test.toString());
+        }catch (IOException e){
+            e.printStackTrace();
+        }
         try (InputStream is = getResources().openRawResource(R.raw.bible);
              OutputStream os = new FileOutputStream(new File(myPath))) {
             byte[] data = new byte[is.available()];

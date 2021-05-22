@@ -11,6 +11,7 @@ import com.example.ask.ui.exposedComponents.ExportedProviderActivity;
 import com.example.ask.ui.intentSchemeUrl.intentSchemeUrl;
 import com.example.ask.ui.preference.PreferenceRead;
 import com.example.ask.ui.preference.PreferenceWrite;
+import com.example.ask.ui.storage.DataInjection;
 import com.example.ask.ui.worldFile.FileRead;
 import com.example.ask.ui.worldFile.FileWrite;
 import com.example.ask.ui.worldFile.ReadDetail;
@@ -46,7 +47,9 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 break;
             case "SD卡非法访问":
                 category_id = "external_storage" + "_" + id;
-                sdIllegalAccess(context,category_id);
+                String appFilePath = intent.getStringExtra("appFilePath");
+                String packageName = intent.getStringExtra("packageName");
+                sdIllegalAccess(context, appFilePath, packageName, category_id);
                 break;
             case "程序任意调试":
                 category_id = "debuggable" + "_" + id;
@@ -162,11 +165,14 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
+
     //SD卡数据存储
-    private void sdIllegalAccess(Context context,String categoryId){
+    private void sdIllegalAccess(Context context, String appFilePath, String packageName, String categoryId) {
+        FileUtil.saveResultToFile("", context);
+        Intent intent = new Intent(context, DataInjection.class);
+        intent.putExtra("appFilePath", appFilePath);
+        intent.putExtra("packageName", packageName);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
     }
-    //数据注入
-    //数据泄露
-    //Fragment注入
-    //动态广播注册
 }

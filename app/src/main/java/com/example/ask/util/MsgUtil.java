@@ -67,9 +67,9 @@ public class MsgUtil {
     private static List<Message> returnStorage(Context context) {
         List<Message> messages = new ArrayList<>();
         Message msg1 = new Message("数据注入");
-        Message msg2 = new Message("信息泄露");
+        //Message msg2 = new Message("信息泄露");
         messages.add(msg1);
-        messages.add(msg2);
+        //.add(msg2);
         return messages;
     }
 

@@ -64,8 +64,8 @@ public class ExportedProviderActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (uris == null){
-                    Toast.makeText(ExportedProviderActivity.this,"没有获取到目标Content Provider的UR，利用失败", Toast.LENGTH_SHORT).show();
-                    FileUtil.saveResultToFile("访问目标Content Provider的URI为" + uris[0], ExportedProviderActivity.this);
+                    Toast.makeText(ExportedProviderActivity.this,"没有获取到目标Content Provider的URI，利用失败", Toast.LENGTH_SHORT).show();
+                    FileUtil.saveResultToFile("没有获取到目标Content Provider的URI，利用失败", ExportedProviderActivity.this);
                 }else if(column_name.getText().toString() == null || column_value.getText().toString() == null){
                     Toast.makeText(ExportedProviderActivity.this,"请填写列名和内容", Toast.LENGTH_SHORT).show();
                     FileUtil.saveResultToFile("需要根据界面提示填写相应内容", ExportedProviderActivity.this);

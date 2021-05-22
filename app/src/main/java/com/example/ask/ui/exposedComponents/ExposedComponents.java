@@ -42,27 +42,24 @@ public class ExposedComponents extends Fragment {
                 String meg = msgList.get(position).getContent();
                 switch (meg) {
                     case "Activity暴露":
-                        Intent intent = new Intent();
-                        intent.setAction("com.example.addcontact");
-                        intent.putExtra("name", "侯晓磊");
-                        intent.putExtra("phoneNum", "12345678901");
-                        getActivity().startActivity(intent);
+                        Intent intent2 = new Intent();
+                        intent2.setClass(getContext(), ExportedComponent.class);
+                        startActivity(intent2);
                         break;
                     case "Service暴露":
-                        ComponentName componentName = new ComponentName("com.example.exportedservice", "com.example.exportedservice.ExportedService");
-                        Intent intent1 = new Intent();
-                        intent1.setComponent(componentName);
-                        getActivity().startService(intent1);
+                        Intent intent3 = new Intent();
+                        intent3.setClass(getContext(), ExportedComponent.class);
+                        startActivity(intent3);
                         break;
                     case "BroadcastReceiver暴露":
-                        Intent intent2 = new Intent();
-                        intent2.setAction("com.example.ExportedReceiver");
-                        getActivity().sendBroadcast(intent2);
+                        Intent intent4 = new Intent();
+                        intent4.setClass(getContext(), ExportedComponent.class);
+                        startActivity(intent4);
                         break;
                     case "ContentProvider暴露":
-                        Intent intent3 = new Intent();
-                        intent3.setClass(getActivity(), ExploitProviderActivity.class);
-                        startActivity(intent3);
+                        Intent intent6 = new Intent();
+                        intent6.setClass(getContext(), ExportedProviderActivity.class);
+                        startActivity(intent6);
                         break;
                 }
             }

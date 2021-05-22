@@ -59,6 +59,7 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 FileUtil.saveResultToFile("", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent2 = new Intent();
+                intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent2.setClass(context, ExportedComponent.class);
                 context.startActivity(intent2);
                 break;

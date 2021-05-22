@@ -59,8 +59,8 @@ public class ExportedComponent extends Activity {
         target_package_name = (TextView) findViewById(R.id.target_package_name);
         send_command = (Button) findViewById(R.id.send_command);
 
-        String extras_label = category_id + "_extra";
-        String action_label = category_id + "_action";
+        String extras_label = category_id + "_extras";
+        String action_label = category_id + "_actions";
         String component_name_label = category_id + "_tag_name";
         String package_name_label = category_id + "_package_name";
         String class_path_label = category_id + "_class_path";

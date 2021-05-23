@@ -8,7 +8,7 @@ import com.example.ask.MainActivity;
 import com.example.ask.R;
 import com.example.ask.ui.exposedComponents.ExportedComponent;
 import com.example.ask.ui.exposedComponents.ExportedProviderActivity;
-import com.example.ask.ui.intentSchemeUrl.intentSchemeUrl;
+import com.example.ask.ui.intentSchemeUrl.intentSchemeUrlActivity;
 import com.example.ask.ui.preference.PreferenceRead;
 import com.example.ask.ui.preference.PreferenceWrite;
 import com.example.ask.ui.storage.DataInjection;
@@ -75,14 +75,16 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 FileUtil.saveResultToFile("", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent3 = new Intent();
+                intent3.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent3.setClass(context, ExportedComponent.class);
                 context.startActivity(intent3);
                 break;
             case "ContentProvider组件暴漏":
-                category_id = "exported_provide" + "_" + id;
+                category_id = "exported_provider" + "_" + id;
                 FileUtil.saveResultToFile("", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent6 = new Intent();
+                intent6.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent6.setClass(context, ExportedProviderActivity.class);
                 context.startActivity(intent6);
                 break;
@@ -91,6 +93,7 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 FileUtil.saveResultToFile("", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent4 = new Intent();
+                intent4.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent4.setClass(context, ExportedComponent.class);
                 context.startActivity(intent4);
                 break;
@@ -116,7 +119,8 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 category_id = "intent_scheme_url" + "_" + id;
                 FileUtil.saveResultToFile("", context);
                 Intent intent1 = new Intent();
-                intent1.setClass(context, intentSchemeUrl.class);
+                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent1.setClass(context, intentSchemeUrlActivity.class);
                 context.startActivity(intent1);
                 break;
             case "隐式Intent调用":

@@ -5,7 +5,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/intent_scheme_url"
+        android:text="发送INTENT SCHEME URL"
         android:id="@+id/exploit_intent_scheme_url"/>
 
 </LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ask">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ask_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ask_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.worldFile.FileRead"/>
+        <activity android:name=".ui.worldFile.FileWrite"/>
+        <activity android:name=".ui.storage.DataInjection"/>
+        <activity android:name=".ui.storage.InformationLeak"/>
+        <activity android:name=".ui.worldFile.ReadDetail"/>
+        <activity android:name=".ui.worldFile.WriteDetail"/>
+        <activity android:name=".ui.preference.PreferenceRead"/>
+        <activity android:name=".ui.preference.PreferenceWrite"/>
+        <activity android:name=".ui.exposedComponents.ExploitProviderActivity"/>
+        <activity android:name=".ui.implicitIntent.HijackIntent">
+            <intent-filter>
+                <action android:name="com.example.showlocation"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".ui.dynamicBroadCast.DynamicRegBroadcastActivity"/>
+        <activity android:name=".ui.storage.VideoInformationLeak"/>
+        <receiver android:name=".broadcast.AskBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ask.goExploit"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name=".ui.implicitIntent.HijackingImplicitIntentActivity" android:enabled="true" android:exported="true">
+        </activity>
+        <service android:name=".ui.implicitIntent.HijackingImplicitIntentService" android:enabled="true" android:exported="true">
+        </service>
+        <receiver android:name=".ui.implicitIntent.HijackingImplicitIntentReceiver" android:enabled="true" android:exported="true">
+        </receiver>
+        <activity android:name=".ui.intentSchemeUrl.intentSchemeUrlActivity"/>
+        <activity android:name=".ui.intentSchemeUrl.intentSchemeUrlTestActivity" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="intentschemeurltest" android:host="scan" android:path="/"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.exposedComponents.ExportedComponent"/>
+        <activity android:name=".ui.exposedComponents.ExportedProviderActivity"/>
+
+    </application>
+
+</manifest>

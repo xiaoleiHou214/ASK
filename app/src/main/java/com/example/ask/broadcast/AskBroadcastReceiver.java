@@ -28,28 +28,32 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
             case "全局文件可读":
                 category_id = "file_world_readable" + "_" + id;
                 String fileName = intent.getStringExtra("path");
-                worldFileReadBroadcast(context, fileName);
+                String packageName = intent.getStringExtra("packageName");
+                worldFileReadBroadcast(context, fileName, packageName);
                 break;
             case "全局文件可写":
                 category_id = "file_world_writable" + "_" + id;
                 String fileName1 = intent.getStringExtra("path");
-                worldFileWriteBroadcast(context, fileName1);
+                String packageName2 = intent.getStringExtra("packageName");
+                worldFileWriteBroadcast(context, fileName1, packageName2);
                 break;
             case "配置文件可读":
                 category_id = "preference_world_readable" + "_" + id;
                 String fileName2 = intent.getStringExtra("path");
-                sharedPreferencesReadBroadcast(context, fileName2);
+                String packageName3 = intent.getStringExtra("packageName");
+                sharedPreferencesReadBroadcast(context, fileName2, packageName3);
                 break;
             case "配置文件可写":
                 category_id = "preference_world_writable" + "_" + id;
                 String fileName3 = intent.getStringExtra("path");
-                sharedPreferencesWriteBroadcast(context, fileName3);
+                String packageName4 = intent.getStringExtra("packageName");
+                sharedPreferencesWriteBroadcast(context, fileName3, packageName4);
                 break;
             case "SD卡非法访问":
                 category_id = "external_storage" + "_" + id;
                 String appFilePath = intent.getStringExtra("appFilePath");
-                String packageName = intent.getStringExtra("packageName");
-                sdIllegalAccess(context, appFilePath, packageName, category_id);
+                String packageName1 = intent.getStringExtra("packageName");
+                sdIllegalAccess(context, appFilePath, packageName1, category_id);
                 break;
             case "程序任意调试":
                 category_id = "debuggable" + "_" + id;
@@ -127,41 +131,45 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
     }
 
     //全局文件可读
-    private void worldFileReadBroadcast(Context context, String fileName) {
+    private void worldFileReadBroadcast(Context context, String fileName, String packageName) {
         FileUtil.saveResultToFile("", context);
         Intent intent = new Intent(context, FileRead.class);
         String path = fileName;
         intent.putExtra("path", path);
+        intent.putExtra("packageName", packageName);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
     //全局文件可写
-    private void worldFileWriteBroadcast(Context context, String fileName) {
+    private void worldFileWriteBroadcast(Context context, String fileName, String packageName) {
         FileUtil.saveResultToFile("", context);
         Intent intent = new Intent(context, FileWrite.class);
         String path = fileName;
         intent.putExtra("path", path);
+        intent.putExtra("packageName", packageName);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
     //配置文件可读
-    private void sharedPreferencesReadBroadcast(Context context, String fileName) {
+    private void sharedPreferencesReadBroadcast(Context context, String fileName, String packageName) {
         FileUtil.saveResultToFile("", context);
         Intent intent = new Intent(context, PreferenceRead.class);
         String path = fileName;
         intent.putExtra("path", path);
+        intent.putExtra("packageName", packageName);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
     //配置文件可写
-    private void sharedPreferencesWriteBroadcast(Context context, String fileName) {
+    private void sharedPreferencesWriteBroadcast(Context context, String fileName, String packageName) {
         FileUtil.saveResultToFile("", context);
         Intent intent = new Intent(context, PreferenceWrite.class);
         String path = fileName;
         intent.putExtra("path", path);
+        intent.putExtra("packageName", packageName);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

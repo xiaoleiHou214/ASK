@@ -27,6 +27,7 @@ public class PreferenceRead extends Activity {
     private List<Message> messageList;
     private MsgAdapter msgAdapter;
     private String path;
+    private String packageNmae;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -35,7 +36,8 @@ public class PreferenceRead extends Activity {
 
         listView = findViewById(R.id.list_item);
         Intent receiverIntent = getIntent();
-        path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/" + receiverIntent.getStringExtra("path");
+        packageNmae = receiverIntent.getStringExtra("packageName");
+        path = "/data/data/"+packageNmae+"/files/" + receiverIntent.getStringExtra("path");
         messageList = getFileList();
         msgAdapter = new MsgAdapter(this,messageList);
         listView.setAdapter(msgAdapter);

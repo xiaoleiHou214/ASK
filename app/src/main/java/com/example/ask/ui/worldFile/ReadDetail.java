@@ -51,7 +51,7 @@ public class ReadDetail extends Activity {
             readText.setText(all.toString());
             FileUtil.saveResultToFile("读取文件内容成功！", this);
             FileUtil.saveResultToFile("文件内容：", this);
-            FileUtil.saveResultToFile(all.toString(), this);
+            FileUtil.saveResultToFile((all.toString() == null || "".equals(all.toString())) ? "null" : all.toString(), this);
             FileUtil.saveResultToFile("文件可读漏洞利用成功！", this);
         } catch (IOException e) {
             Toast.makeText(this, "读取失败", Toast.LENGTH_SHORT).show();

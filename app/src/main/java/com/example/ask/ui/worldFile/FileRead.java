@@ -34,6 +34,7 @@ public class FileRead extends Activity {
     private List<Message> messageList;
     private MsgAdapter msgAdapter;
     private String path;
+    private String packageName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,8 @@ public class FileRead extends Activity {
 
         listView = findViewById(R.id.list_item);
         Intent receiverIntent = getIntent();
-        path = "/data/data/com.avjindersinghsekhon.minimaltodo/files/" + receiverIntent.getStringExtra("path");
+        packageName = receiverIntent.getStringExtra("packageName");
+        path = "/data/data/"+packageName+"/files/" + receiverIntent.getStringExtra("path");
         messageList = getFileList();
         msgAdapter = new MsgAdapter(this, messageList);
         listView.setAdapter(msgAdapter);

@@ -33,7 +33,7 @@ public class PreferenceWrite extends Activity {
         listView = findViewById(R.id.list_item);
         Intent receiverIntent = getIntent();
         packageName = receiverIntent.getStringExtra("packageName");
-        path = "/data/data/" + packageName + "/files/" + receiverIntent.getStringExtra("path");
+        path = "/data/data/" + packageName + "/shared_prefs/" + receiverIntent.getStringExtra("path");
         messageList = getFileList();
         msgAdapter = new MsgAdapter(this, messageList);
         listView.setAdapter(msgAdapter);

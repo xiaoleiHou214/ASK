@@ -43,7 +43,6 @@ public class ExportedComponent extends Activity {
     String target_component;
     String class_path;
     Map<String, String> final_extras = new HashMap<>();
-    ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,6 +81,8 @@ public class ExportedComponent extends Activity {
             target_package_name.setText(package_name);
             target_package = package_name;
             target_component = component_name;
+            FileUtil.saveResultToFile("目标应用包为：" + target_package, ExportedComponent.this);
+            FileUtil.saveResultToFile("目标组件为：" + target_component, ExportedComponent.this);
         }
 
         if (category_id.contains("fragment_injection")) {
@@ -121,57 +122,69 @@ public class ExportedComponent extends Activity {
                 Intent intent = new Intent();
                 if (category_id.contains("dynamic_register_receiver")) {
                     intent.setAction(action);
+                    FileUtil.saveResultToFile("添加action为：" + action, ExportedComponent.this);
                     for (String extra_key : final_extras.keySet()) {
                         intent.putExtra(extra_key, final_extras.get(extra_key));
+                        FileUtil.saveResultToFile("添加extra：" + "(" + extra_key + ", " + final_extras.get(extra_key) + ")", ExportedComponent.this);
                     }
                     sendBroadcast(intent);
-                    FileUtil.saveResultToFile("发送广播", ExportedComponent.this);
-                    FileUtil.saveResultToFile("请根据目标应用的特定行为来自行判定目标广播接收器是否成功被唤醒，有无危险行为，以确定漏洞利用成功与否", ExportedComponent.this);
+                    FileUtil.saveResultToFile("发送广播。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用出现异常行为(比如界面改变，弹出窗口等)，则利用成功。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用无异常行为，则利用失败。", ExportedComponent.this);
                 } else if (category_id.contains("fragment_injection")) {
                     for (String extra_key : final_extras.keySet()) {
                         intent.putExtra(extra_key, final_extras.get(extra_key));
+                        FileUtil.saveResultToFile("添加extra：" + "(" + extra_key + ", " + final_extras.get(extra_key) + ")", ExportedComponent.this);
                     }
                     intent.setPackage(target_package);
                     intent.setClassName(target_package, class_path);
                     startActivity(intent);
-                    FileUtil.saveResultToFile("发送广播", ExportedComponent.this);
-                    FileUtil.saveResultToFile("请根据目标应用的特定行为来自行判定目标广播接收器是否成功被唤醒，有无危险行为，以确定漏洞利用成功与否", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用自主跳转到目标Fragment页面，则利用成功。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用无反应，则利用失败。", ExportedComponent.this);
                 } else if (category_id.contains("exported_activity")) {
                     if (target_package != null && target_component != null) {
                         intent.setComponent(new ComponentName(target_package, target_component));
                     }
                     intent.setAction(action);
+                    FileUtil.saveResultToFile("添加action为：" + action, ExportedComponent.this);
                     for (String extra_key : final_extras.keySet()) {
                         intent.putExtra(extra_key, final_extras.get(extra_key));
+                        FileUtil.saveResultToFile("添加extra：" + "(" + extra_key + ", " + final_extras.get(extra_key) + ")", ExportedComponent.this);
                     }
                     startActivity(intent);
-                    FileUtil.saveResultToFile("发送intent至目标activity", ExportedComponent.this);
-                    FileUtil.saveResultToFile("请根据目标应用的特定行为来自行判定目标activity是否启动成功，有无危险行为，以确定漏洞利用成功与否", ExportedComponent.this);
-
+                    FileUtil.saveResultToFile("发送intent至目标activity。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用出现异常行为(比如界面改变，弹出窗口等)，则利用成功。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用无异常行为，则利用失败。", ExportedComponent.this);
 
                 } else if (category_id.contains("exported_service")) {
                     if (target_package != null && target_component != null) {
                         intent.setComponent(new ComponentName(target_package, target_component));
                     }
                     intent.setAction(action);
+                    FileUtil.saveResultToFile("添加action为：" + action, ExportedComponent.this);
                     for (String extra_key : final_extras.keySet()) {
                         intent.putExtra(extra_key, final_extras.get(extra_key));
+                        FileUtil.saveResultToFile("添加extra：" + "(" + extra_key + ", " + final_extras.get(extra_key) + ")", ExportedComponent.this);
                     }
                     startService(intent);
-                    FileUtil.saveResultToFile("发送intent至目标服务", ExportedComponent.this);
-                    FileUtil.saveResultToFile("请根据目标应用的特定行为来自行判定目标服务是否启动成功，有无危险行为，以确定漏洞利用成功与否", ExportedComponent.this);
+                    FileUtil.saveResultToFile("发送intent至目标服务。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用出现异常行为(比如界面改变，弹出窗口等)，则利用成功。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用无异常行为，则利用失败。", ExportedComponent.this);
 
                 } else if (category_id.contains("exported_receiver")) {
                     if (target_package != null && target_component != null) {
                         intent.setComponent(new ComponentName(target_package, target_component));
                     }
                     intent.setAction(action);
+                    FileUtil.saveResultToFile("添加action为：" + action, ExportedComponent.this);
                     for (String extra_key : final_extras.keySet()) {
                         intent.putExtra(extra_key, final_extras.get(extra_key));
+                        FileUtil.saveResultToFile("添加extra：" + "(" + extra_key + ", " + final_extras.get(extra_key) + ")", ExportedComponent.this);
                     }
                     sendBroadcast(intent);
-                    FileUtil.saveResultToFile("发送广播", ExportedComponent.this);
-                    FileUtil.saveResultToFile("请根据目标应用的特定行为来自行判定目标广播接收器是否成功被唤醒，有无危险行为，以确定漏洞利用成功与否", ExportedComponent.this);
+                    FileUtil.saveResultToFile("发送广播。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用出现异常行为(比如界面改变，弹出窗口等)，则利用成功。", ExportedComponent.this);
+                    FileUtil.saveResultToFile("若目标应用无异常行为，则利用失败。", ExportedComponent.this);
                 }
             }
         });

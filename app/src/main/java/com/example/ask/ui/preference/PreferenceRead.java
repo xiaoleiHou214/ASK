@@ -37,7 +37,7 @@ public class PreferenceRead extends Activity {
         listView = findViewById(R.id.list_item);
         Intent receiverIntent = getIntent();
         packageNmae = receiverIntent.getStringExtra("packageName");
-        path = "/data/data/"+packageNmae+"/files/" + receiverIntent.getStringExtra("path");
+        path = "/data/data/"+packageNmae+"/shared_prefs/" + receiverIntent.getStringExtra("path");
         messageList = getFileList();
         msgAdapter = new MsgAdapter(this,messageList);
         listView.setAdapter(msgAdapter);

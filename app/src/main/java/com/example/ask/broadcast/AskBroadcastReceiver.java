@@ -64,6 +64,8 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
             case "Activity组件暴漏":
                 category_id = "exported_activity" + "_" + id;
                 FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("安装目标应用完成后，请手动打开目标应用，完成初始配置（如授权等操作）。", context);
+                FileUtil.saveResultToFile("之后重新在网页点击”利用“", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent2 = new Intent();
                 intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -73,6 +75,8 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
             case "Service组件暴漏":
                 category_id = "exported_service" + "_" + id;
                 FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("安装目标应用完成后，请手动打开目标应用，完成初始配置（如授权等操作），并触法目标服务，使其初始化。", context);
+                FileUtil.saveResultToFile("之后重新在网页点击”利用“", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent3 = new Intent();
                 intent3.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -82,6 +86,8 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
             case "ContentProvider组件暴漏":
                 category_id = "exported_provider" + "_" + id;
                 FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("安装目标应用完成后，请手动打开目标应用，完成初始配置（如授权等操作）。", context);
+                FileUtil.saveResultToFile("之后重新在网页点击”利用“", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent6 = new Intent();
                 intent6.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -91,6 +97,8 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
             case "BroadcastReceiver组件暴漏":
                 category_id = "exported_receiver" + "_" + id;
                 FileUtil.saveResultToFile("", context);
+                FileUtil.saveResultToFile("安装目标应用完成后，请手动打开目标应用，完成初始配置（如授权等操作）。", context);
+                FileUtil.saveResultToFile("之后重新在网页点击”利用“", context);
                 FileUtil.saveResultToFile("请在手机界面配置相应参数。", context);
                 Intent intent4 = new Intent();
                 intent4.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -127,6 +135,8 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 category_id = "implicit_intent" + "_" + id;
                 FileUtil.saveResultToFile("", context);
                 FileUtil.saveResultToFile("请打开待测应用，并操作使其发送隐式Intent。", context);
+                FileUtil.saveResultToFile("如果有窗口弹出，提示成功劫持隐式intent，则利用成功。", context);
+                FileUtil.saveResultToFile("如果无响应，则利用失败。", context);
                 break;
             case "WebView弱配置接口":
                 category_id = "weak_configured_webview" + "_" + id;

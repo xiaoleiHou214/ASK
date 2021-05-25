@@ -76,7 +76,8 @@ public class ExportedProviderActivity extends Activity {
                     Uri final_uri = Uri.parse(uris[0]);
                     getContentResolver().insert(final_uri, values);
                     FileUtil.saveResultToFile("向目标Content Provider插入记录。", ExportedProviderActivity.this);
-                    FileUtil.saveResultToFile("请根据目标应用特定行为，来判断记录是否插入成功，从而判读漏洞利用成功与否。", ExportedProviderActivity.this);
+                    FileUtil.saveResultToFile("若目标应用出现异常行为（比如，页面发生改变，记录增多等），则利用成功。", ExportedProviderActivity.this);
+                    FileUtil.saveResultToFile("若目标应用无异常行为，则利用失败。", ExportedProviderActivity.this);
                 }
             }
         });

@@ -142,11 +142,12 @@ public class AskBroadcastReceiver extends BroadcastReceiver {
                 category_id = "weak_configured_webview" + "_" + id;
                 FileUtil.saveResultToFile("", context);
                 FileUtil.saveResultToFile("请打开待cmd,输入以下命令，将隐私文件File2放入Android虚拟机待测应用私有文件夹下：", context);
-                FileUtil.saveResultToFile("cd [ASK_deploy的根目录路径/benchmark/Browser/]", context);
+                FileUtil.saveResultToFile("cd [ASK_deploy的根目录路径]/benchmark/Browser/", context);
                 FileUtil.saveResultToFile("adb root", context);
                 FileUtil.saveResultToFile("adb push File2 /data/data/[待测应用包名]/files/File2", context);
-                FileUtil.saveResultToFile("待测应用包名为：" + R.string.packageName, context);
-                FileUtil.saveResultToFile("打开应用，点击webview所在界面底端的Click to update" + R.string.packageName, context);
+                String s = context.getResources().getString(R.string.packageName);
+                FileUtil.saveResultToFile("待测应用包名为：" + s, context);
+                FileUtil.saveResultToFile("打开应用，点击webview所在界面底端的Click to update", context);
                 FileUtil.saveResultToFile("页面底端出现读取的隐私文件内容，则利用成功", context);
                 FileUtil.saveResultToFile("页面底端不出现读取的隐私文件内容，则利用失败", context);
                 break;

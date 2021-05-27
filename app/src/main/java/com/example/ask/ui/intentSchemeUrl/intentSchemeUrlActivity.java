@@ -20,8 +20,8 @@ public class intentSchemeUrlActivity extends Activity {
         setContentView(R.layout.intent_scheme_url);
         button = findViewById(R.id.exploit_intent_scheme_url);
         FileUtil.saveResultToFile("请点击\"发送INTENT SCHEME URL\"。", intentSchemeUrlActivity.this);
-        FileUtil.saveResultToFile("请选择待测浏览器打开", intentSchemeUrlActivity.this);
-        FileUtil.saveResultToFile("打开浏览器后，点击\"Click to open intent scheme url!", intentSchemeUrlActivity.this);
+        FileUtil.saveResultToFile("请选择待测目标应用打开；如果没有待测应用选项，则利用失败", intentSchemeUrlActivity.this);
+        FileUtil.saveResultToFile("打开目标应用后，点击\"Click to open intent scheme url!", intentSchemeUrlActivity.this);
         FileUtil.saveResultToFile("若打开新的activity并显示利用成功，则利用成功，否则，利用失败", intentSchemeUrlActivity.this);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
